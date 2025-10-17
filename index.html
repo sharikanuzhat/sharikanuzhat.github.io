@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sharika Nuzhat - Research Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c7a7b;
+            --accent-color: #805ad5;
+            --light-accent: #9f7aea;
+            --text-color: #2d3748;
+            --light-text: #4a5568;
+            --background-color: #f7fafc;
+            --card-bg: #ffffff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --accent-gradient: linear-gradient(135deg, var(--accent-color), var(--light-accent));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .poster-container {
+            width: 90%;
+            max-width: 1200px;
+            min-height: 3200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            background: var(--background-color);
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-logo .material-icons {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            font-size: 28px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(44, 122, 123, 0.1);
+        }
+        
+        .social-icons a:hover {
+            color: white;
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        /* Home Section */
+        .home-section {
+            background: var(--gradient);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .home-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://sfile.chatglm.cn/images-ppt/5062a063c996.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            background: white;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            background: white;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            background: white;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+        
+        .home-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            z-index: -1;
+            opacity: 0.7;
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.4;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+        
+        .home-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        
+        .home-subtitle {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .home-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+        
+        .home-intro {
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+        
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .achievement-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-desc {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+        
+        .research-areas {
+            width: 100%;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .research-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .research-icon {
+            font-size: 32px;
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        
+        .research-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .research-content p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: white;
+            position: relative;
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(128, 90, 213, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(44, 122, 123, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .personal-statement {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--light-text);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .personal-statement::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 150px;
+            color: rgba(128, 90, 213, 0.1);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .education-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .education-degree {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .education-institution {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+        
+        .education-date {
+            font-size: 16px;
+            color: var(--light-text);
+            font-style: italic;
+        }
+        
+        .career-timeline {
+            position: relative;
+            margin-left: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .career-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 4px solid var(--accent-color);
+            z-index: 1;
+            box-shadow: 0 0 0 4px rgba(128, 90, 213, 0.2);
+        }
+        
+        .timeline-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-institution {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-description {
+            font-size: 16px;
+            color: var(--light-text);
+            line-height: 1.5;
+        }
+        
+        .affiliations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .affiliation-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .affiliation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .affiliation-icon {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .affiliation-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .affiliation-location {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        .awards-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .award-icon {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        
+        .award-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .award-content p {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        /* Research Section */
+        .research-section {
+            background-color: #f5f7fa;
+            position: relative;
+        }
+        
+        .research-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 90% 10%, rgba(128, 90, 213, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 90%, rgba(44, 122, 123, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .interest-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .interest-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .interest-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .interest-description {
+            font-size: 16px;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-header {
+            background: var(--gradient);
+            padding: 25px 35px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: skewX(-15deg) translateX(50px);
+        }
+        
+        .project-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-meta {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-content {
+            padding: 30px 35px;
+        }
+        
+        .project-description {
+            font-size: 16px;
+            color: var(--light-text);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .project-details {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .project-detail {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .project-detail .material-icons {
+            font-size: 20px;
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+        
+        .impact-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .impact-list {
+            list-style-type: none;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .impact-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .impact-icon {
+            font-size: 28px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        
+        .impact-text {
+            font-size: 16px;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        /* Publications Section */
+        .publications-section {
+            background-color: white;
+            position: relative;
+        }
+        
+        .publications-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 80%, rgba(128, 90, 213, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 20%, rgba(44, 122, 123, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .overview-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .overview-text {
+            font-size: 18px;
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .scholar-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 25px;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(44, 122, 123, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .scholar-link:hover {
+            transform: translateY(-3px);
+            background: var(--gradient);
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .scholar-link .material-icons {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .scholar-link:hover .material-icons {
+            color: white;
+        }
+        
+        .publication-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .publication-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .publication-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .publication-journal {
+            font-size: 16px;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .publication-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .publication-year {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+        
+        .publication-year .material-icons {
+            font-size: 18px;
+            margin-right: 6px;
+            color: var(--accent-color);
+        }
+        
+        .publication-doi {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+        
+        .publication-doi .material-icons {
+            font-size: 18px;
+            margin-right: 6px;
+            color: var(--accent-color);
+        }
+        
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-title .material-icons {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 28px;
+        }
+        
+        .conference-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+        
+        .conference-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .conference-icon {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        
+        .conference-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .conference-content p {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: #f5f7fa;
+            position: relative;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 80%, rgba(128, 90, 213, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 20%, rgba(44, 122, 123, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .social-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+        }
+        
+        .social-card:hover h3 {
+            text-decoration: underline;
+        }
+        
+        .social-icon {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-right: 20px;
+        }
+        
+        .social-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .social-content p {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        .collaboration-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 50px;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .collaboration-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .collaboration-title .material-icons {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 26px;
+        }
+        
+        .collaboration-list {
+            list-style-type: none;
+        }
+        
+        .collaboration-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+        
+        .collaboration-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .collaboration-icon {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        
+        .collaboration-text {
+            font-size: 16px;
+            color: var(--light-text);
+            line-height: 1.5;
+        }
+        
+        .map-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+        
+        .map-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .map-title .material-icons {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 26px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 280px;
+            background-color: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            font-size: 16px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder .material-icons {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .map-description {
+            font-size: 16px;
+            color: var(--light-text);
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gradient);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .footer-content {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-link:hover::after {
+            width: 100%;
+        }
+        
+        .footer-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-social a {
+            color: white;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-social a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 15px;
+            opacity: 0.8;
+        }
+        
+        /* Background Shapes */
+        .background-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.15;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--accent-color);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .shape-2 {
+            width: 250px;
+            height: 250px;
+            background-color: var(--secondary-color);
+            bottom: 100px;
+            left: -80px;
+        }
+        
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--primary-color);
+            bottom: -50px;
+            right: 100px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .poster-container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            
+            .nav-container {
+                width: 95%;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .social-card {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .overview-text {
+                font-size: 16px;
+            }
+            
+            .publication-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .poster-container {
+                width: 100%;
+                padding: 0 5px;
+            }
+            
+            .navbar {
+                padding: 10px 0;
+            }
+            
+            .nav-logo {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .social-card {
+                padding: 15px;
+            }
+            
+            .social-icon {
+                font-size: 28px;
+                margin-right: 15px;
+            }
+            
+            .scholar-link {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="background-shape shape-1"></div>
+        <div class="background-shape shape-2"></div>
+        <div class="background-shape shape-3"></div>
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="material-icons">science</i>
+                    <span>Dr. Sharika Nuzhat</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://scholar.google.com/citations?user=zaARqX4AAAAJ&hl" target="_blank"><i class="material-icons">school</i></a>
+                    <a href="https://www.linkedin.com/in/sharika-nuzhat-67a830166/" target="_blank"><i class="material-icons">work</i></a>
+                    <a href="https://www.researchgate.net/profile/Sharika-Nuzhat" target="_blank"><i class="material-icons">groups</i></a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="home-background"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="section-container">
+                <div class="home-content">
+                    <div class="profile-image-container">
+                        <img src="https://z-cdn-media.chatglm.cn/files/9ac38e2a-4bec-4537-ab96-9a5f4ffd4f05_Profile%20Image.jpg?auth_key=1791791121-3d87aa7a9e51423f9f884a02c8a08e8c-0-eb4635bafabc1dbb494da9280481a525" alt="Dr. Sharika Nuzhat" class="profile-image">
+                    </div>
+                    <h1 class="home-title">Dr. Sharika Nuzhat</h1>
+                    <div class="home-subtitle">Associate Scientist, Nutrition Research Division, icddr,b</div>
+                    <div class="home-tagline">Advancing pediatric health through innovative research in malnutrition, diarrheal diseases, and infectious illnesses</div>
+                    <div class="home-intro">With 14 years of dedicated research experience, I am committed to improving child health outcomes through evidence-based interventions and clinical trials.</div>
+                    
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <i class="material-icons achievement-icon">science</i>
+                            <div class="achievement-title">Principal Investigator</div>
+                            <div class="achievement-desc">Leading tebipenem-pivoxil clinical trial for shigellosis (2021-2025)</div>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="material-icons achievement-icon">emoji_events</i>
+                            <div class="achievement-title">Best Research Award</div>
+                            <div class="achievement-desc">Best Clinical Research Presenter Award (2017)</div>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="material-icons achievement-icon">menu_book</i>
+                            <div class="achievement-title">Published Researcher</div>
+                            <div class="achievement-desc">25+ peer-reviewed publications in prestigious journals</div>
+                        </div>
+                    </div>
+                    
+                    <div class="research-areas">
+                        <h2 class="section-title" style="color: white; margin-bottom: 30px;">Research Focus Areas</h2>
+                        <div class="research-grid">
+                            <div class="research-card">
+                                <i class="material-icons research-icon">medication</i>
+                                <div class="research-content">
+                                    <h3>Pediatric Clinical Trials</h3>
+                                    <p>Leading innovative trials to develop new treatments for childhood diseases</p>
+                                </div>
+                            </div>
+                            <div class="research-card">
+                                <i class="material-icons research-icon">coronavirus</i>
+                                <div class="research-content">
+                                    <h3>Infectious Diseases</h3>
+                                    <p>Researching antimicrobial resistance and treatment strategies for diarrheal diseases</p>
+                                </div>
+                            </div>
+                            <div class="research-card">
+                                <i class="material-icons research-icon">biotech</i>
+                                <div class="research-content">
+                                    <h3>Gut Microbiota & Child Health</h3>
+                                    <p>Exploring the relationship between gut health and childhood malnutrition</p>
+                                </div>
+                            </div>
+                            <div class="research-card">
+                                <i class="material-icons research-icon">data_usage</i>
+                                <div class="research-content">
+                                    <h3>Data Science</h3>
+                                    <p>Applying advanced analytical methods to pediatric health research</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-container">
+                <h2 class="section-title">About Me</h2>
+                
+                <div class="personal-statement">
+                    I have been working in the area of management and prevention of childhood malnutrition, diarrheal diseases, and infectious illnesses for the last 14 years at icddr,b, Dhaka Medical College Hospital, Bangabandhu Sheikh Mujib Medical University, and Dhaka Children's Hospital. I am part of the faculty of Public Health Nutrition at the BRAC James P. Grant School of Public Health (Bangladesh) and Uppsala University (Sweden). I am also involved in different training programs on nutrition and infectious diseases across the country. I am the principal investigator of the tebipenem-pivoxil clinical trial for shigellosis in children which is being conducted at icddr,b. I have a number of publications in peer-reviewed journals on infectious diseases and malnutrition.
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Education</h3>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-degree">MBBS</div>
+                        <div class="education-institution">Mymensingh Medical College, University of Dhaka</div>
+                        <div class="education-date">May 2007</div>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-degree">DCH (Diploma in Child Health)</div>
+                        <div class="education-institution">Dhaka Medical College Hospital</div>
+                        <div class="education-date">July 2012</div>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-degree">PhD Student</div>
+                        <div class="education-institution">Charles Sturt University, Australia</div>
+                        <div class="education-date">Artificial intelligence and Cyber Futures Institute</div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Career Timeline</h3>
+                <div class="career-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 – Present</div>
+                        <div class="timeline-title">Associate Scientist</div>
+                        <div class="timeline-institution">Nutrition Research Division, icddr,b</div>
+                        <div class="timeline-description">Leading research projects, managing clinical trials, and supervising research teams</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 – 2021</div>
+                        <div class="timeline-title">Assistant Scientist</div>
+                        <div class="timeline-institution">Nutrition and Clinical Services Division, icddr,b</div>
+                        <div class="timeline-description">Conducting research on pediatric health, malnutrition, and infectious diseases</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2015 – 2018</div>
+                        <div class="timeline-title">Medical Officer</div>
+                        <div class="timeline-institution">Dhaka hospital, icddr,b</div>
+                        <div class="timeline-description">Providing clinical care and participating in research activities</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2013 – 2015</div>
+                        <div class="timeline-title">Clinical Fellow</div>
+                        <div class="timeline-institution">Dhaka hospital, icddr,b</div>
+                        <div class="timeline-description">Gaining clinical experience in pediatric care and research</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2011 – 2013</div>
+                        <div class="timeline-title">Clinical Fellow</div>
+                        <div class="timeline-institution">icddr,b</div>
+                        <div class="timeline-description">Beginning clinical career in pediatric health and research</div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Professional Affiliations</h3>
+                <div class="affiliations-grid">
+                    <div class="affiliation-card">
+                        <i class="material-icons affiliation-icon">school</i>
+                        <div class="affiliation-name">BRAC James P. Grant School of Public Health</div>
+                        <div class="affiliation-location">Bangladesh</div>
+                    </div>
+                    <div class="affiliation-card">
+                        <i class="material-icons affiliation-icon">account_balance</i>
+                        <div class="affiliation-name">Uppsala University (Former)</div>
+                        <div class="affiliation-location">Sweden</div>
+                    </div>
+                    <div class="affiliation-card">
+                        <i class="material-icons affiliation-icon">business</i>
+                        <div class="affiliation-name">Charles Sturt University</div>
+                        <div class="affiliation-location">Australia</div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Awards and Honors</h3>
+                <div class="awards-section">
+                    <div class="award-item">
+                        <i class="material-icons award-icon">emoji_events</i>
+                        <div class="award-content">
+                            <h3>Best Clinical Research Presenter Award</h3>
+                            <p>The Pediatric Pulmonology Conference, 2017</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Research Section -->
+        <section id="research" class="section research-section">
+            <div class="section-container">
+                <h2 class="section-title">Research</h2>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Research Interests</h3>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <i class="material-icons interest-icon">medication</i>
+                        <div class="interest-title">Pediatric Clinical Trials</div>
+                        <div class="interest-description">Designing and implementing innovative clinical trials to develop new treatments for childhood diseases, with a focus on shigellosis and diarrheal diseases.</div>
+                    </div>
+                    <div class="interest-card">
+                        <i class="material-icons interest-icon">coronavirus</i>
+                        <div class="interest-title">Infectious Diseases</div>
+                        <div class="interest-description">Researching antimicrobial resistance patterns and developing evidence-based treatment strategies for diarrheal diseases, pneumonia, and other childhood infections.</div>
+                    </div>
+                    <div class="interest-card">
+                        <i class="material-icons interest-icon">biotech</i>
+                        <div class="interest-title">Gut Microbiota & Child Health</div>
+                        <div class="interest-description">Exploring the complex relationship between gut microbiota development, human milk oligosaccharides, and childhood malnutrition in Bangladeshi infants.</div>
+                    </div>
+                    <div class="interest-card">
+                        <i class="material-icons interest-icon">data_usage</i>
+                        <div class="interest-title">Data Science</div>
+                        <div class="interest-description">Applying machine learning approaches and advanced analytical methods to pediatric health research to improve diagnosis and treatment outcomes.</div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Ongoing Projects</h3>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Tebipenem-pivoxil as an alternative to ceftriaxone for clinically non-responding children with shigellosis</div>
+                            <div class="project-meta">Principal Investigator | 2021-2025</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">This project aims to determine whether tebipenem-pivoxil is non-inferior to the currently WHO-recommended second-line Shigella therapy (ceftriaxone). We have completed the pharmacokinetics trial and going to start the main trial soon.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <i class="material-icons">account_balance</i>
+                                    <span>The Tres Cantos Open Lab Foundation</span>
+                                </div>
+                                <div class="project-detail">
+                                    <i class="material-icons">update</i>
+                                    <span>Pharmacokinetics trial completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Immune response in Shigella spp. Infected human colonic tissue using CyTOF and RNAseq</div>
+                            <div class="project-meta">Co-investigator | 2019-2024</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">The aim of this study was to understand the host responses to S. flexneri infection in order to facilitate the development of potential host-directed therapeutics.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <i class="material-icons">account_balance</i>
+                                    <span>National Institute of Health (NIH)</span>
+                                </div>
+                                <div class="project-detail">
+                                    <i class="material-icons">science</i>
+                                    <span>CyTOF and RNAseq analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Completed Projects</h3>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Zinc sulfate acceptability study in children with acute diarrhea</div>
+                            <div class="project-meta">Co-investigator | 2019-2020</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">The aim of the study was to evaluate the acceptability of the improvised zinc product in the management of childhood diarrhea. The findings showed that the modified Zinc formulation was well tolerated, and caregivers' willingness to use this formulation in the future supports its acceptability, adherence, and palatability.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <i class="material-icons">account_balance</i>
+                                    <span>ACME Laboratories LTD, Bangladesh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Pilot of a Prebiotic and Probiotic Trial in Young Infants with Severe Acute Malnutrition</div>
+                            <div class="project-meta">Co-investigator | 2018-2020</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">The study aimed to evaluate the engraftment of Bifidobacterium infantis in the intestine of malnourished young infants with or without prebiotic supplements. This intervention increased fecal B. infantis abundance in infants with SAM, although levels were still 10- to 100-fold lower than in untreated healthy controls.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <i class="material-icons">account_balance</i>
+                                    <span>Bill and Melinda Gates Foundation (BMGF)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Antibiotics for Children with Severe Diarrhoea (ABCD)</div>
+                            <div class="project-meta">Co-investigator | 2017-2019</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">This was a randomized, placebo-controlled trial to determine if the addition of an antibiotic (azithromycin) to the standard management for acute non-bloody watery diarrhea in a subset of children 2-23 months of age who are dehydrated or undernourished could reduce the mortality and improve growth in settings where such deaths commonly occur.</div>
+                            <div class="project-details">
+                                <div class="project-detail">
+                                    <i class="material-icons">account_balance</i>
+                                    <span>Bill and Melinda Gates Foundation (BMGF)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Research Impact</h3>
+                <div class="impact-section">
+                    <ul class="impact-list">
+                        <li class="impact-item">
+                            <i class="material-icons impact-icon">check_circle</i>
+                            <div class="impact-text">My research has contributed to improved treatment guidelines for childhood diarrheal diseases</div>
+                        </li>
+                        <li class="impact-item">
+                            <i class="material-icons impact-icon">check_circle</i>
+                            <div class="impact-text">Development of more palatable zinc formulations for better adherence</div>
+                        </li>
+                        <li class="impact-item">
+                            <i class="material-icons impact-icon">check_circle</i>
+                            <div class="impact-text">Advancing understanding of gut microbiota's role in childhood malnutrition</div>
+                        </li>
+                        <li class="impact-item">
+                            <i class="material-icons impact-icon">check_circle</i>
+                            <div class="impact-text">Identifying antibiotic resistance patterns to inform treatment strategies</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Publications Section -->
+        <section id="publications" class="section publications-section">
+            <div class="section-container">
+                <h2 class="section-title">Publications</h2>
+                
+                <div class="overview-card">
+                    <p class="overview-text">With over 22 peer-reviewed publications in prestigious journals, my research focuses on pediatric health, malnutrition, diarrheal diseases, and infectious illnesses. My work has been published in high-impact journals including Scientific Reports, PLOS ONE, and Science Translational Medicine.</p>
+                    <div>
+                        <a href="https://scholar.google.com/citations?user=zaARqX4AAAAJ&hl" target="_blank" class="scholar-link">
+                            <i class="material-icons">school</i>
+                            Google Scholar Profile
+                        </a>
+                        <span style="display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 500; margin-right: 25px; padding: 10px 20px; border-radius: 50px; background: rgba(44, 122, 123, 0.1);">
+                            <i class="material-icons" style="margin-right: 10px; color: var(--secondary-color);">format_list_numbered</i>
+                            25+ Publications
+                        </span>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Recent Publications</h3>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Maternal knowledge, attitude and practice regarding commercial oral rehydration salt solution: experience from a diarrhoea disease hospital in Bangladesh</div>
+                    <div class="publication-journal">BMJ Paediatrics Open</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2025
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1136/bmjpo-2024-003299
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Trends in preventive practices against diarrhoeal disease among under-five children: experience from the largest diarrhoea disease hospital in Bangladesh</div>
+                    <div class="publication-journal">BMJ Paediatrics Open</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2025
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1136/bmjpo-2024-003259
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Effects of probiotic and synbiotic supplementation on ponderal and linear growth in severely malnourished young infants in a randomized clinical trial</div>
+                    <div class="publication-journal">Scientific Reports</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2023
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1038/s41598-023-28573-6
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Antimicrobial resistance in shigellosis: A surveillance study among urban and rural children over 20 years in Bangladesh</div>
+                    <div class="publication-journal">PLOS ONE</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1371/journal.pone.0277574
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">New formulation zinc sulphate acceptability and adherence in children with acute diarrhoea: A prospective, open‐label, interventional study in Bangladesh</div>
+                    <div class="publication-journal">Journal of Paediatrics and Child Health</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1111/jpc.15690
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin: 50px 0 25px;">Key Publications by Research Area</h3>
+                
+                <div class="category-title">
+                    <i class="material-icons">biotech</i>
+                    Malnutrition and Gut Microbiota
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Bifidobacterium infantis treatment promotes weight gain in Bangladeshi infants with severe acute malnutrition</div>
+                    <div class="publication-journal">Science Translational Medicine</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1126/scitranslmed.abk1107
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Association of human milk oligosaccharides and nutritional status of young infants among Bangladeshi mother–infant dyads</div>
+                    <div class="publication-journal">Scientific Reports</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1038/s41598-022-09456-0
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-title" style="margin-top: 40px;">
+                    <i class="material-icons">coronavirus</i>
+                    Diarrheal Diseases and Antimicrobial Resistance
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Antimicrobial resistance in shigellosis: A surveillance study among urban and rural children over 20 years in Bangladesh</div>
+                    <div class="publication-journal">PLOS ONE</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1371/journal.pone.0277574
+                    </div>
+                </div>
+                        </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Antibiotic exposure among young infants suffering from diarrhoea in Bangladesh</div>
+                    <div class="publication-journal">Journal of Paediatrics and Child Health</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2021
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.1111/jpc.15321
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-title" style="margin-top: 40px;">
+                    <i class="material-icons">child_care</i>
+                    Child Health and Nutrition
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Health and nutritional status of children hospitalized during the COVID-19 pandemic, Bangladesh</div>
+                    <div class="publication-journal">Bulletin of the World Health Organization</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.2471/BLT.21.288832
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-title">Different Features of Cholera in Malnourished and Non-Malnourished Children: Analysis of 20 Years of Surveillance Data from a Large Diarrheal Disease Hospital in Urban Bangladesh</div>
+                    <div class="publication-journal">Children</div>
+                    <div class="publication-meta">
+                        <div class="publication-year">
+                            <i class="material-icons">event</i>
+                            2022
+                        </div>
+                        <div class="publication-doi">
+                            <i class="material-icons">link</i>
+                            DOI: 10.3390/children9020137
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin: 50px 0 25px;">Conference Presentations</h3>
+                
+                <div class="conference-card">
+                    <i class="material-icons conference-icon">emoji_events</i>
+                    <div class="conference-content">
+                        <h3>Best Clinical Research Presenter Award</h3>
+                        <p>The Pediatric Pulmonology Conference, 2017</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-container">
+                <h2 class="section-title">Contact</h2>
+                
+                <h3 style="font-size: 28px; color: var(--primary-color); margin-bottom: 25px;">Professional Networks</h3>
+                <div class="social-grid">
+                    <a href="https://scholar.google.com/citations?user=zaARqX4AAAAJ&hl" class="social-card" target="_blank">
+                        <i class="material-icons social-icon">school</i>
+                        <div class="social-content">
+                            <h3>Google Scholar</h3>
+                            <p>View my research publications</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sharika-nuzhat-67a830166/" class="social-card" target="_blank">
+                        <i class="material-icons social-icon">work</i>
+                        <div class="social-content">
+                            <h3>LinkedIn</h3>
+                            <p>Connect professionally</p>
+                        </div>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Sharika-Nuzhat" class="social-card" target="_blank">
+                        <i class="material-icons social-icon">groups</i>
+                        <div class="social-content">
+                            <h3>ResearchGate</h3>
+                            <p>Follow my research work</p>
+                        </div>
+                    </a>
+                    <div class="social-card">
+                        <i class="material-icons social-icon">fingerprint</i>
+                        <div class="social-content">
+                            <h3>ORCID</h3>
+                            <p>Researcher identification</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collaboration-card">
+                    <div class="collaboration-title">
+                        <i class="material-icons">handshake</i>
+                        Open to Collaborations
+                    </div>
+                    <ul class="collaboration-list">
+                        <li class="collaboration-item">
+                            <i class="material-icons collaboration-icon">medication</i>
+                            <div class="collaboration-text">Clinical trials for pediatric infectious diseases</div>
+                        </li>
+                        <li class="collaboration-item">
+                            <i class="material-icons collaboration-icon">biotech</i>
+                            <div class="collaboration-text">Research on childhood malnutrition and gut microbiota</div>
+                        </li>
+                        <li class="collaboration-item">
+                            <i class="material-icons collaboration-icon">coronavirus</i>
+                            <div class="collaboration-text">Studies on antimicrobial resistance in diarrheal diseases</div>
+                        </li>
+                        <li class="collaboration-item">
+                            <i class="material-icons collaboration-icon">data_usage</i>
+                            <div class="collaboration-text">Data science applications in pediatric health research</div>
+                        </li>
+                        <li class="collaboration-item">
+                            <i class="material-icons collaboration-icon">school</i>
+                            <div class="collaboration-text">Mentorship opportunities for early career researchers</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="map-card">
+                    <div class="map-title">
+                        <i class="material-icons">map</i>
+                        icddr,b, Dhaka
+                    </div>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="material-icons">location_on</i>
+                            <p>International Centre for Diarrhoeal Disease Research, Bangladesh (icddr,b)</p>
+                            <p>68, Shaheed Tajuddin Ahmed Sarani, Mohakhali, Dhaka -1212, Bangladesh</p>
+                        </div>
+                    </div>
+                    <p class="map-description">International Centre for Diarrhoeal Disease Research, Bangladesh (icddr,b) is an international health research organization located in Dhaka, Bangladesh, dedicated to solving public health problems through innovative scientific research.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#research" class="footer-link">Research</a>
+                    <a href="#publications" class="footer-link">Publications</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://scholar.google.com/citations?user=zaARqX4AAAAJ&hl" target="_blank"><i class="material-icons">school</i></a>
+                    <a href="https://www.linkedin.com/in/sharika-nuzhat-67a830166/" target="_blank"><i class="material-icons">work</i></a>
+                    <a href="https://www.researchgate.net/profile/Sharika-Nuzhat" target="_blank"><i class="material-icons">groups</i></a>
+                </div>
+                <div class="copyright">© 2025 Dr. Sharika Nuzhat. All rights reserved.</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
